@@ -1,0 +1,10 @@
+#pills-tab li a:active,
+#pills-tab li a:focus,
+#pills-tab li a.active {
+  background-color: gray !important;
+  color: white !important;
+}
+
+#pills-tab li a {
+  color: gray;
+}

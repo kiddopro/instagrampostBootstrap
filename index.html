@@ -21,6 +21,7 @@
       crossorigin="anonymous"
     ></script>
     <title>Instagram</title>
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
@@ -131,47 +132,27 @@
     con esto ya tenemos todo centrado dentro de la misma página -->
     <div class="container-fluid">
       <div class="row border d-flex justify-content-center">
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <!-- Al label le saqué la propiedad btn-secondary porque agregaba más padding del que necesitabamos -->
-          <!-- por ende dejé solo la propiedad btn para que tuviera una medida de margin decente y le saque algo de relleno para que no
-          quedara tan espaciado un elemento del otro -->
-          <label class="btn active p-0">
-            <a
-              class="nav-link bg-secondary rounded"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <i class="fas fa-th text-white"></i>
-            </a>
-          </label>
-          <label class="btn p-0">
-            <a
-              class="nav-link bg-secondary rounded"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <i class="fas fa-square text-white"></i>
-            </a>
-          </label>
-        </div>
-      </div>
+        <ul class="nav nav-pills my-1" id="pills-tab" role="tablist">
+       <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fas fa-th "></i></a>
+       </li>
+      <li class="nav-item" role="presentation">
+         <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fas fa-square "></i></a>
+      </li>
+      </ul>
     </div>
 
-    <div class="container-fluid">
+
+    <!-- Aca se encuentra lo que se va a mostrar al presionar algunas de las opciones del filtro -->
+    <div class="container-fluid p-0 bg-light">
       <!-- A cada columna de las filas les apliqué un p-0 para sacar el espaciado innecesario
         ya que el border les da el espaciado perfecto.
       Tambien les di la cantidad de espacios que ocuparan en pantalla estas columnas para
     que las imágenes se mantengan las 3 en fila y no se desborden. -->
       <!-- A la imágen le di un width del 100 para que se adapte a la caja y no quede cortada. -->
-      <div class="row">
+      <div class="tab-content" id="pills-tabContent">
+         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="row">
         <div class="col-4 border p-0">
           <img src="https://picsum.photos/536/354" alt="" class="w-100" />
         </div>
@@ -193,16 +174,46 @@
           <img src="https://picsum.photos/536/354" alt="" class="w-100" />
         </div>
       </div>
+       <div class="row">
+        <div class="col border p-0">
+          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
+        </div>
+        <div class="col border p-0">
+          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
+        </div>
+        <div class="col border p-0">
+          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
+        </div>
+      </div>
+         </div>
 
-      <div class="row">
-        <div class="col border p-0">
-          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
-        </div>
-        <div class="col border p-0">
-          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
-        </div>
-        <div class="col border p-0">
-          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
+         <!-- Si en el filtrado se selecciona la segunda opcion se muestra este contenido -->
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class="row">
+              <div class="col-12">
+                <div class="card mx-auto" style="width: 35%;">
+                  <div class="card-header d-flex justify-content-between">
+                    <h4 class="card-title m-0">My first photo</h4>
+                    <span>12/14</span>
+                  </div>
+                  <img src="https://picsum.photos/536/354" class="card-img-top rounded-0" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">23 Likes</h5>
+                    <p class="card-text">This is my first photo of the feed. this is a multi line comment for testing purposes.
+                      I am learning to code with #BreatheCode
+                    </p>
+                  </div>
+                  <div class="card-footer bg-white d-flex border-top-0 bd-highlight">
+                    <i class="far fa-heart bd-highlight p-2"></i>
+                    <p class="card-text m-0 flex-grow-1 bd-highlight p-2">Comment......</p>
+                    <i class="fas fa-ellipsis-v bd-highlight p-2" ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+         
+          </div>
         </div>
       </div>
     </div>
