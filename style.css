@@ -8,3 +8,7 @@
 #pills-tab li a {
   color: gray;
 }
+
+#navBarTop {
+  margin: 0 100px 0 100px;
+}
