@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Beth+Ellen&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/3fcd48c804.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Instagram</title>
+  </head>
+
+  <body>
+<!-- A la barra de navegación le di un sticky-top, lo que hace es que cuando la pantalla
+      comienza a scrollear, la barra de navegación va a seguir viendose en el top de la pantalla/página -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto pl-5">
+          <li class="nav-item">
+            <i class="fab fa-instagram fa-2x"></i>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+              style="font-family: 'Beth Ellen', cursive"
+              >Instagram</a
+            >
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <!-- Cambié el botón y le dí un type button para que no se refrescara la pagina al presionarlo. -->
+          <button
+            type="button"
+            class="btn btn-success"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            data-whatever="@getbootstrap"
+          >
+            Create new post
+          </button>
+    
+          </div>
+
+        
+          <!-- En esta linea se agregó la propiedad pr-5 haciendo referencia al padding derecho del icono con la tuerquita -->
+          <ul class="navbar-nav mr-auto pr-5">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-cog"></i>
+              </a>
+              <!-- Puse los valores correspondientes para el dropdown -->
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Log out</a>
+              </div>
+            </li>
+          </ul>
+        </form>
+    </nav>
+
+    <!-- A continuación el codigo con el cuadro de dialogo para mostrar el model -->
+    <!-- Lo tuve que poner por fuera en otro div porque el model al tener una posición fixed
+    tenía problemas con la posición sticky del navbar, para ello tuve que ponerlo con otro div aparte
+  para que se posicionara con este y no tuviera conflicto con el div del navbar -->
+          <div class="container">
+            <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <textarea
+                        class="form-control w-100"
+                        id="message-text"
+                      ></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Cancel
+                  </button>
+                  <button type="button" class="btn btn-success">
+                    Publish
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!-- En esta linea se encuentra el nav de filtrado del contenido -->
+    <!-- Puse esta barra en un container fluid ya que no respetaba los límites de ancho de la página,
+    con esto ya tenemos todo centrado dentro de la misma página -->
+    <div class="container-fluid">
+      <div class="row border d-flex justify-content-center">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <!-- Al label le saqué la propiedad btn-secondary porque agregaba más padding del que necesitabamos -->
+          <!-- por ende dejé solo la propiedad btn para que tuviera una medida de margin decente y le saque algo de relleno para que no
+          quedara tan espaciado un elemento del otro -->
+          <label class="btn active p-0">
+            <a
+              class="nav-link bg-secondary rounded"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fas fa-th text-white"></i>
+            </a>
+          </label>
+          <label class="btn p-0">
+            <a
+              class="nav-link bg-secondary rounded"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fas fa-square text-white"></i>
+            </a>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <!-- A cada columna de las filas les apliqué un p-0 para sacar el espaciado innecesario
+        ya que el border les da el espaciado perfecto.
+      Tambien les di la cantidad de espacios que ocuparan en pantalla estas columnas para
+    que las imágenes se mantengan las 3 en fila y no se desborden. -->
+      <!-- A la imágen le di un width del 100 para que se adapte a la caja y no quede cortada. -->
+      <div class="row">
+        <div class="col-4 border p-0">
+          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
+        </div>
+        <div class="col-4 border p-0">
+          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
+        </div>
+        <div class="col-4 border p-0">
+          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col border p-0">
+          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
+        </div>
+        <div class="col border p-0">
+          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
+        </div>
+        <div class="col border p-0">
+          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col border p-0">
+          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
+        </div>
+        <div class="col border p-0">
+          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
+        </div>
+        <div class="col border p-0">
+          <img src="https://picsum.photos/536/354" alt="" class="w-100" />
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
